@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- HTML Meta Tags -->
+<title>Butthereum - sitting on buttness.</title>
+<meta name="description" content="We're standing on buttness. Butthereum TX fees cost a small fortune & our founder Simonalik gets boners during crypto conferences.">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://butthereum.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Butthereum - sitting on buttness.">
+<meta property="og:description" content="We're standing on buttness. Butthereum TX fees cost a small fortune & our founder Simonalik gets boners during crypto conferences.">
+<meta property="og:image" content="https://i.imgur.com/D3dWt6k.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="butthereum.com">
+<meta property="twitter:url" content="https://butthereum.com/">
+<meta name="twitter:title" content="Butthereum - sitting on buttness.">
+<meta name="twitter:description" content="We're standing on buttness. Butthereum TX fees cost a small fortune & our founder Simonalik gets boners during crypto conferences.">
+<meta name="twitter:image" content="https://i.imgur.com/D3dWt6k.png">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="https://i.imgur.com/WmdBOff.png">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; }
+
+:root {
+  --bg: #738ccc;
+  --card: #6480bf;
+  --card-hover: #5d79b8;
+  --border: #5672b0;
+  --gold: #d4b96a;
+  --gold-lt: #e8d094;
+  --dark: #0e1a2d;
+  --muted: rgba(255,255,255,0.5);
+  --r: 14px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: #fff;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+body::-webkit-scrollbar { display: none; }
+
+
+
+/* ─── TICKER ─── */
+.ticker {
+  height: 36px; overflow: hidden;
+  background: linear-gradient(
+    130deg,
+    #e8d094 0%,
+    #ceb474 25%,
+    #d4a83a 50%,
+    #e8d094 75%,
+    #ceb474 100%
+  );
+  background-size: 250% 250%;
+  animation: gradientShift 5s ease infinite;
+  border-top: 1px solid rgba(255,230,120,.55);
+  border-bottom: 1px solid rgba(140,90,0,.2);
+  box-shadow:
+    0 1px 0 rgba(255,248,190,.7) inset,
+    0 -1px 0 rgba(0,0,0,.16) inset,
+    0 4px 14px rgba(160,110,20,.22);
+  display: flex; align-items: center;
+  position: relative;
+}
+/* top sheen matching the button */
+.ticker::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 52%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,.32) 0%,
+    rgba(255,255,255,.06) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+.ticker-track {
+  display: flex; gap: 3rem;
+  white-space: nowrap;
+  will-change: transform;
+}
+.ticker-track span {
+  font-family: 'Outfit', sans-serif;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: #5c3a00;
+}
+@keyframes tick { to { transform: translateX(-50%); } }
+
+/* ─── HERO ─── */
+.hero {
+  max-width: 1120px; margin: 0 auto;
+  padding: 2rem 2rem 3rem;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.hero-img {
+  width: 100%; max-width: 700px;
+  border: none; display: block;
+  margin-bottom: 2.8rem;
+  animation: fadeIn .4s ease both;
+  margin: 0 auto;
+}
+@keyframes fadeIn { from { opacity: 0; } }
+@keyframes up { from { opacity:0; transform: translateY(22px); } }
+
+.hero h1 {
+  font-family: 'Outfit', sans-serif; font-weight: 900;
+  font-size: clamp(2.8rem, 8vw, 5.8rem);
+  letter-spacing: -.04em; line-height: 1.0;
+  animation: up .6s cubic-bezier(.22,.68,0,1.12) .08s both;
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--gold-lt);
+}
+.hero p {
+  margin: 1.1rem auto 2.2rem; max-width: 400px;
+  font-size: .95rem; font-weight: 400;
+  color: rgba(255,255,255,.65); line-height: 1.7;
+  animation: up .6s cubic-bezier(.22,.68,0,1.12) .15s both;
+}
+.hero-btns {
+  display: flex; gap: .7rem; flex-wrap: wrap; justify-content: center;
+  animation: up .6s cubic-bezier(.22,.68,0,1.12) .22s both;
+}
+/* ── GOLD BUTTON ── */
+.btn-gold {
+  /* animated gradient that breathes */
+  background: linear-gradient(
+    130deg,
+    #e8d094 0%,
+    #ceb474 25%,
+    #d4a83a 50%,
+    #e8d094 75%,
+    #ceb474 100%
+  );
+  background-size: 250% 250%;
+  animation: gradientShift 5s ease infinite;
+  color: #5c3a00;
+  padding: .82rem 2rem;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .875rem;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: .4rem;
+  position: relative; overflow: hidden;
+  border: 1px solid rgba(255,230,120,.55);
+  outline: 1px solid rgba(140,90,0,.2);
+  outline-offset: 0;
+  box-shadow:
+    0 1px 0 rgba(255,248,190,.7) inset,
+    0 -1px 0 rgba(0,0,0,.16) inset,
+    0 4px 14px rgba(160,110,20,.38),
+    0 14px 36px rgba(160,110,20,.18);
+  transition: transform .16s cubic-bezier(.22,.68,0,1.25),
+              box-shadow .18s ease,
+              outline-offset .18s ease;
+  cursor: pointer; isolation: isolate;
+}
+/* liquid glass top sheen */
+.btn-gold::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 52%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,.32) 0%,
+    rgba(255,255,255,.06) 60%,
+    transparent 100%
+  );
+  border-radius: 11px 11px 60% 60% / 11px 11px 6px 6px;
+  pointer-events: none; z-index: 1;
+}
+/* shimmer streak */
+.btn-gold::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(108deg,
+    transparent 35%,
+    rgba(255,255,255,.30) 48%,
+    rgba(255,255,255,.05) 52%,
+    transparent 65%
+  );
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .55s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+.btn-wrap {
+  display: inline-flex;
+  padding-bottom: 6px;
+  margin-bottom: -6px;
+}
+.btn-wrap:hover .btn-gold {
+  transform: translateY(-3px) scale(1.025);
+  outline-offset: 3px;
+  box-shadow:
+    0 1px 0 rgba(255,248,190,.7) inset,
+    0 -1px 0 rgba(0,0,0,.16) inset,
+    0 6px 18px rgba(160,110,20,.45),
+    0 22px 48px rgba(160,110,20,.25);
+}
+.btn-wrap:hover .btn-gold::after { transform: translateX(120%) skewX(-12deg); }
+.btn-wrap:hover .btn-ghost {
+  background: rgba(115,140,204,.28);
+  border-color: rgba(255,255,255,.52);
+  transform: translateY(-3px) scale(1.025);
+  outline-offset: 3px;
+  box-shadow:
+    0 1.5px 0 rgba(255,255,255,.26) inset,
+    0 -1px 0 rgba(0,0,0,.1) inset,
+    0 8px 30px rgba(0,0,0,.2),
+    0 1px 1px rgba(255,255,255,.12) inset;
+}
+.btn-wrap:hover .btn-ghost::after { transform: translateX(120%) skewX(-12deg); }
+
+.btn-gold:active {
+  transform: translateY(-1px) scale(.99);
+  box-shadow:
+    0 1px 0 rgba(255,248,190,.6) inset,
+    0 -1px 0 rgba(0,0,0,.2) inset,
+    0 2px 8px rgba(160,110,20,.32),
+    0 6px 18px rgba(160,110,20,.15);
+}
+
+/* ── GHOST BUTTON ── */
+.btn-ghost {
+  color: rgba(255,255,255,.93);
+  padding: .82rem 2rem;
+  border-radius: 12px;
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: .875rem;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: .4rem;
+  position: relative; overflow: hidden;
+  /* true glass — tinted with page blue */
+  background: rgba(115, 140, 204, .18);
+  border: 1px solid rgba(255,255,255,.3);
+  backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
+  -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.05);
+  outline: 1px solid rgba(255,255,255,.06);
+  outline-offset: 0;
+  box-shadow:
+    0 1.5px 0 rgba(255,255,255,.22) inset,
+    0 -1px 0 rgba(0,0,0,.1) inset,
+    0 4px 18px rgba(0,0,0,.14),
+    0 1px 1px rgba(255,255,255,.1) inset;
+  transition: transform .16s cubic-bezier(.22,.68,0,1.25),
+              background .18s,
+              border-color .18s,
+              box-shadow .18s,
+              outline-offset .18s;
+  cursor: pointer; isolation: isolate;
+}
+/* curved top sheen — matches gold btn */
+.btn-ghost::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 52%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,.18) 0%,
+    rgba(255,255,255,.04) 60%,
+    transparent 100%
+  );
+  border-radius: 11px 11px 60% 60% / 11px 11px 6px 6px;
+  pointer-events: none; z-index: 1;
+}
+/* shimmer streak */
+.btn-ghost::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(108deg,
+    transparent 35%,
+    rgba(255,255,255,.16) 48%,
+    rgba(255,255,255,.03) 52%,
+    transparent 65%
+  );
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .6s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+.btn-ghost:active {
+  transform: translateY(-1px) scale(.99);
+  background: rgba(115,140,204,.14);
+}
+
+/* ─── BENTO ─── */
+.bento-wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+}
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.card { opacity: 0; }
+.card.card-visible { animation: cardIn .55s cubic-bezier(.22,.68,0,1.1) both; opacity: 1; }
+
+/* ── GLASS CARD — self-contained like btn-ghost ── */
+.card {
+  background: rgba(60, 80, 160, .28);
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: var(--r);
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    0 1.5px 0 rgba(255,255,255,.22) inset,
+    0 -1px 0 rgba(0,0,0,.18) inset,
+    0 4px 18px rgba(0,0,0,.22),
+    0 1px 0 rgba(255,255,255,.08) inset;
+  transition: background .18s, border-color .18s, transform .16s cubic-bezier(.22,.68,0,1.25), box-shadow .18s, outline-offset .18s;
+  outline: 1px solid rgba(255,255,255,.05);
+  outline-offset: 0;
+}
+/* curved top sheen */
+.card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 52%;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,.18) 0%,
+    rgba(255,255,255,.04) 60%,
+    transparent 100%
+  );
+  border-radius: 13px 13px 60% 60% / 13px 13px 6px 6px;
+  pointer-events: none; z-index: 1;
+}
+/* shimmer streak */
+.card::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 2;
+  background: linear-gradient(108deg,
+    transparent 35%,
+    rgba(255,255,255,.16) 48%,
+    rgba(255,255,255,.03) 52%,
+    transparent 65%
+  );
+  transform: translateX(-120%) skewX(-12deg);
+  transition: transform .6s cubic-bezier(.4,0,.2,1);
+  pointer-events: none;
+}
+.card:hover {
+  background: rgba(70, 95, 180, .38);
+  border-color: rgba(255,255,255,.45);
+  transform: translateY(-3px) scale(1.01);
+  outline-offset: 3px;
+  box-shadow:
+    0 1.5px 0 rgba(255,255,255,.26) inset,
+    0 -1px 0 rgba(0,0,0,.18) inset,
+    0 8px 30px rgba(0,0,0,.28),
+    0 1px 0 rgba(255,255,255,.10) inset;
+}
+.card:hover::after { transform: translateX(120%) skewX(-12deg); }
+
+.s3  { grid-column: span 3; }
+.s4  { grid-column: span 4; }
+.s5  { grid-column: span 5; }
+.s6  { grid-column: span 6; }
+.s8  { grid-column: span 8; }
+.s12 { grid-column: span 12; }
+.r2  { grid-row: span 2; }
+
+/* ─── CARD TYPOGRAPHY ─── */
+.tag {
+  display: block;
+  font-size: .67rem; font-weight: 600;
+  letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold);
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: .55rem;
+}
+.card-title {
+  font-family: 'Outfit', sans-serif; font-weight: 800;
+  font-size: 1.05rem; letter-spacing: -.02em; line-height: 1.25;
+  margin-bottom: .45rem;
+}
+.card-body {
+  font-size: .84rem; color: var(--muted);
+  line-height: 1.65; font-weight: 400;
+}
+.big-num {
+  font-family: 'Outfit', sans-serif; font-weight: 900;
+  font-size: clamp(2.6rem, 4vw, 3.6rem);
+  letter-spacing: -.06em; line-height: 1;
+  color: var(--gold-lt);
+}
+.big-quote {
+  font-family: 'Outfit', sans-serif; font-weight: 800;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  letter-spacing: -.03em; line-height: 1.2;
+}
+.big-quote em { font-style: normal; color: var(--gold-lt); }
+
+/* pills */
+.pills { display: flex; gap: .4rem; margin-top: .85rem; }
+.pill {
+  flex: 1; padding: .5rem .65rem; border-radius: 8px;
+  font-family: 'Outfit', sans-serif; font-weight: 700;
+  text-align: center;
+  background: rgba(0,0,0,.15);
+  border: 1px solid rgba(0,0,0,.1);
+}
+.pill .pv { font-size: 1rem; letter-spacing: -.02em; display: block; margin-bottom: .12rem; }
+.pill .pl { font-size: .62rem; font-weight: 500; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; }
+.pill-bad  .pv { color: #ffaaaa; }
+.pill-good .pv { color: var(--gold-lt); }
+
+
+/* price */
+.price-val {
+  font-family: 'Outfit', sans-serif; font-weight: 900;
+  font-size: 2.4rem; letter-spacing: -.06em; line-height: 1;
+  color: var(--gold-lt);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.price-val .inf {
+  display: inline-flex;
+  align-items: center;
+  gap: .12em;
+}
+.price-val .inf-sym {
+  font-size: 1.3em;
+  line-height: 0;
+  position: relative;
+  top: .02em;
+}
+.badge {
+  display: inline-block;
+  font-size: .68rem; font-weight: 700; font-family: 'Outfit', sans-serif;
+  padding: .18rem .48rem; border-radius: 5px;
+  background: rgba(0,0,0,.18); color: #a8f0c0;
+  letter-spacing: .03em; margin-left: .35rem;
+  vertical-align: middle;
+}
+
+/* bars */
+.bars { display: flex; gap: 3px; margin-top: .8rem; align-items: flex-end; height: 28px; }
+.bar {
+  flex: 1; border-radius: 3px;
+  background: rgba(255,255,255,.22);
+  animation: barPulse 2.8s ease-in-out infinite;
+}
+.bar:nth-child(2n)   { height: 50%; animation-delay: .5s; }
+.bar:nth-child(3n)   { height: 80%; animation-delay: 1s;  }
+.bar:nth-child(4n)   { height: 38%; animation-delay: .3s; }
+.bar:nth-child(5n+1) { height: 92%; animation-delay: .7s; }
+.bar:first-child     { height: 62%; }
+@keyframes barPulse { 0%,100%{opacity:1} 50%{opacity:.28} }
+
+/* ico */
+.ico {
+  width: 38px; height: 38px; border-radius: 9px;
+  background: rgba(0,0,0,.15);
+  border: 1px solid rgba(0,0,0,.1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.05rem; margin-bottom: .85rem;
+}
+
+/* ─── FOOTER ─── */
+.footer-wrap {
+  margin: 0 2rem;
+}
+.footer-rule {
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(206,180,116,.25) 15%,
+    rgba(232,208,148,.7) 40%,
+    rgba(206,180,116,1) 50%,
+    rgba(232,208,148,.7) 60%,
+    rgba(206,180,116,.25) 85%,
+    transparent 100%
+  );
+  border: none; margin: 0;
+}
+footer {
+  max-width: 1120px; margin: 0 auto;
+  padding: 3rem 0 2.5rem;
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1rem; text-align: center;
+}
+.footer-logo {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900; font-size: 1.5rem; letter-spacing: -.03em;
+  color: var(--gold-lt);
+}
+.footer-tagline {
+  font-family: 'Outfit', sans-serif;
+  font-size: .88rem; font-weight: 400;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .01em;
+}
+footer small {
+  font-size: .72rem; color: rgba(255,255,255,.2);
+  margin-top: .5rem;
+}
+
+@media (max-width: 900px) {
+  .s3,.s4,.s6 { grid-column: span 6; }
+  .s8 { grid-column: span 12; }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .card { grid-column: span 2 !important; grid-row: span 1 !important; }
+}
+
+/* ─── SOCIAL LINKS ─── */
+.social-links {
+  display: flex; align-items: center; gap: .5rem;
+  margin-top: 1rem;
+  animation: up .6s cubic-bezier(.22,.68,0,1.12) .3s both;
+  height: 2.2rem;
+}
+.social-link {
+  display: inline-flex; align-items: center; gap: .4rem;
+  color: rgba(255,255,255,.75);
+  font-family: 'Space Grotesk', sans-serif; font-size: .82rem; font-weight: 600;
+  text-decoration: none;
+  padding: .42rem .85rem;
+  border-radius: 99px;
+  border: 1px solid rgba(255,255,255,.25);
+  transition: color .18s, border-color .18s, background .18s;
+  letter-spacing: .01em;
+  white-space: nowrap;
+}
+.social-link svg { width: 13px; height: 13px; flex-shrink: 0; }
+.social-link:hover {
+  color: #fff;
+  border-color: rgba(255,255,255,.5);
+  background: rgba(255,255,255,.08);
+}
+
+.social-sep {
+  width: 1px; height: 14px;
+  background: rgba(255,255,255,.2);
+  flex-shrink: 0;
+}
+
+.copy-link {
+  cursor: pointer; background: none; border: 1px solid rgba(206,180,116,.45);
+  color: var(--gold-lt) !important;
+  padding: .42rem .85rem;
+}
+.copy-link:hover { border-color: rgba(206,180,116,.75) !important; background: rgba(206,180,116,.1) !important; color: var(--gold-lt) !important; }
+.copy-label {
+  transition: opacity .2s ease;
+  display: inline-block;
+  min-width: 7.5rem;
+  text-align: center;
+}
+.copy-link {
+  min-width: 10rem;
+  justify-content: center;
+}
+
+/* ─── BUTTON KEYFRAMES ─── */
+@keyframes goldPulse {
+  0%   { box-shadow: 0 1px 0 rgba(255,245,180,.65) inset, 0 -1px 0 rgba(0,0,0,.18) inset, 0 0 0 1px rgba(150,100,0,.22), 0 4px 12px rgba(160,110,20,.35), 0 12px 32px rgba(160,110,20,.18), 0 0 0 0 rgba(206,180,116,0); }
+  50%  { box-shadow: 0 1px 0 rgba(255,245,180,.65) inset, 0 -1px 0 rgba(0,0,0,.18) inset, 0 0 0 1px rgba(150,100,0,.22), 0 4px 12px rgba(160,110,20,.35), 0 12px 32px rgba(160,110,20,.18), 0 0 0 7px rgba(206,180,116,0); }
+  100% { box-shadow: 0 1px 0 rgba(255,245,180,.65) inset, 0 -1px 0 rgba(0,0,0,.18) inset, 0 0 0 1px rgba(150,100,0,.22), 0 4px 12px rgba(160,110,20,.35), 0 12px 32px rgba(160,110,20,.18), 0 0 0 13px rgba(206,180,116,0); }
+}
+@keyframes ghostPulse {
+  0%   { box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 -1px 0 rgba(0,0,0,.08) inset, 0 4px 16px rgba(0,0,0,.12), 0 0 0 0 rgba(255,255,255,0); }
+  50%  { box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 -1px 0 rgba(0,0,0,.08) inset, 0 4px 16px rgba(0,0,0,.12), 0 0 0 6px rgba(255,255,255,0); }
+  100% { box-shadow: 0 1px 0 rgba(255,255,255,.18) inset, 0 -1px 0 rgba(0,0,0,.08) inset, 0 4px 16px rgba(0,0,0,.12), 0 0 0 12px rgba(255,255,255,0); }
+}
+/* ── CURSOR GLOW ── */
+.cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  z-index: 999;
+  width: 380px; height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(206,180,116,.13) 0%, rgba(115,140,204,.08) 40%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: opacity .4s ease;
+  mix-blend-mode: screen;
+}
+.copy-link { overflow: hidden; }
+
+/* ── CARD VARIANTS ── */
+
+/* gold-tinted: price card */
+.card-gold {
+  background: rgba(120, 90, 20, .32);
+  border-color: rgba(206,180,116,.35);
+  box-shadow:
+    0 1.5px 0 rgba(255,230,120,.2) inset,
+    0 -1px 0 rgba(0,0,0,.2) inset,
+    0 4px 24px rgba(160,110,20,.18);
+}
+.card-gold::before {
+  background: linear-gradient(180deg, rgba(255,220,80,.12) 0%, transparent 100%);
+}
+.card-gold:hover {
+  background: rgba(140,105,25,.42);
+  border-color: rgba(206,180,116,.55);
+}
+
+/* quote card: subtle gradient sweep */
+.card-quote {
+  background: rgba(50, 68, 150, .35);
+  border-color: rgba(255,255,255,.22);
+  background-image: radial-gradient(ellipse 80% 120% at 90% 110%, rgba(206,180,116,.08) 0%, transparent 60%);
+}
+
+/* cta card: warm glow */
+.card-cta {
+  background: rgba(80, 60, 20, .35);
+  border-color: rgba(206,180,116,.28);
+  box-shadow:
+    0 1.5px 0 rgba(255,220,100,.14) inset,
+    0 -1px 0 rgba(0,0,0,.2) inset,
+    0 4px 24px rgba(160,110,20,.15);
+  background-image: radial-gradient(ellipse 100% 80% at 50% 120%, rgba(206,180,116,.12) 0%, transparent 60%);
+}
+.card-cta:hover {
+  background: rgba(100, 75, 25, .45);
+  border-color: rgba(206,180,116,.45);
+}
+
+/* ── LIVE BADGE ── */
+.live-badge {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-family: 'Outfit', sans-serif; font-size: .6rem; font-weight: 700;
+  letter-spacing: .1em; color: #a8f0c0;
+  background: rgba(0,0,0,.2); border: 1px solid rgba(168,240,192,.25);
+  padding: .18rem .45rem; border-radius: 99px;
+  flex-shrink: 0; margin-top: .1rem;
+}
+.live-dot {
+  width: 5px; height: 5px; border-radius: 50%;
+  background: #a8f0c0;
+  animation: livePulse 1.2s ease-in-out infinite;
+}
+@keyframes livePulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+
+/* ── UPTIME RING ── */
+.uptime-ring {
+  position: relative;
+  width: 90px; height: 90px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.uptime-ring svg {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+
+/* ── FLOATING FACTS ── */
+@keyframes floatUp {
+  0%   { opacity: 0; transform: translateY(0) scale(.85) rotate(-1deg); }
+  10%  { opacity: 1; transform: translateY(-14px) scale(1.03) rotate(.5deg); }
+  85%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-130px) scale(.97) rotate(1deg); }
+}
+.float-fact {
+  position: absolute;
+  pointer-events: none;
+  z-index: 999;
+  max-width: 200px;
+  background: rgba(120, 90, 20, .55);
+  backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid rgba(206,180,116,.4);
+  border-radius: 14px;
+  padding: .6rem .9rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: .76rem; font-weight: 600;
+  color: #fff; line-height: 1.45;
+  box-shadow:
+    0 1.5px 0 rgba(255,230,120,.2) inset,
+    0 -1px 0 rgba(0,0,0,.2) inset,
+    0 8px 32px rgba(100,70,10,.35),
+    0 0 0 1px rgba(206,180,116,.08);
+  animation: floatUp 3.2s cubic-bezier(.22,.68,0,1) forwards;
+  text-align: center;
+  transform-origin: bottom center;
+}
+
+/* ── HOLDERS COMPARE ── */
+.holders-compare {
+  margin-top: .5rem;
+  font-size: .65rem; font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  color: rgba(206,180,116,.7);
+  letter-spacing: .01em;
+}
+
+/* ── CARD SPOTLIGHT ── */
+  position: absolute; inset: 0; z-index: 3;
+  border-radius: var(--r);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .25s ease;
+  background: radial-gradient(circle 180px at 50% 50%, rgba(255,255,255,.07) 0%, transparent 70%);
+}
+.card:hover .card-spotlight { opacity: 1; }
+
+/* ── TILT CARD ── */
+
+/* ── VERSUS LIST ── */
+.versus-list { display: flex; flex-direction: column; gap: .45rem; margin-top: .7rem; }
+.vs-row { display: flex; align-items: center; gap: .5rem; }
+.vs-name { font-family: 'Outfit', sans-serif; font-size: .75rem; font-weight: 600; width: 7.5rem; flex-shrink: 0; white-space: nowrap; }
+.vs-bar-wrap { flex: 1; height: 6px; background: rgba(255,255,255,.08); border-radius: 99px; overflow: hidden; }
+.vs-bar { height: 100%; border-radius: 99px; transition: width 1s cubic-bezier(.22,.68,0,1.1); }
+.vs-bar-butt { background: linear-gradient(90deg, #ceb474, #e8d094); }
+.vs-bar-bad  { background: rgba(255,255,255,.22); }
+.vs-score { font-family: 'Outfit', sans-serif; font-size: .7rem; font-weight: 700; color: var(--muted); width: 1.5rem; text-align: right; flex-shrink: 0; }
+
+/* ── HEARTBEAT BARS (JS-driven) ── */
+.bar { transition: height .1s ease, opacity .1s ease, background .1s ease; }
+
+/* ── SCROLL PROGRESS BAR ── */
+#scrollBar {
+  position: fixed; top: 0; left: 0; z-index: 9999;
+  height: 2px; width: 0%;
+  background: linear-gradient(90deg, #ceb474, #e8d094, #ceb474);
+  background-size: 200% 100%;
+  animation: gradientShift 2s linear infinite;
+  pointer-events: none;
+  transition: width .05s linear;
+}
+
+/* ── RIPPLE ── */
+@keyframes rippleOut {
+  from { transform: translate(-50%,-50%) scale(0); opacity: .5; }
+  to   { transform: translate(-50%,-50%) scale(1); opacity: 0; }
+}
+.ripple-ring {
+  position: absolute; pointer-events: none; z-index: 10;
+  width: 120px; height: 120px; border-radius: 50%;
+  border: 1.5px solid rgba(206,180,116,.6);
+  animation: rippleOut .7s cubic-bezier(.22,.68,0,1) forwards;
+}
+
+/* ── BUTT RAIN ── */
+@keyframes buttFall {
+  0%   { transform: translateY(-60px) rotate(0deg); opacity: 1; }
+  80%  { opacity: 1; }
+  100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+.butt-drop {
+  position: fixed; pointer-events: none; z-index: 9998;
+  font-size: 2rem; user-select: none;
+  animation: buttFall linear forwards;
+}
+
+/* ── SPARKLINE DRAW ── */
+#sparklineLine, #sparklineFill {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  transition: none;
+}
+#sparklineFill { stroke-dasharray: 800; stroke-dashoffset: 800; }
+
+
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes borderRotate {
+  to { --angle: 360deg; }
+}
+</style>
+</head>
+<body>
+<div id="scrollBar"></div>
+
+<img class="hero-img" src="https://i.imgur.com/rhtyhec.png" alt="Butthereum" />
+
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <span>BUTT / USD — $∞</span>
+    <span>up only. probably.</span>
+    <span>gas — depends on what you ate today</span>
+    <span>at least 1 transaction today</span>
+    <span>never hacked. never will be.</span>
+    <span>8.3 billion holders worldwide</span>
+    <span>your bank called. it's scared.</span>
+    <span>sent in 2 seconds, not 5 business days</span>
+    <span>BREAKING: having crypto is not a personality. unless it's BUTTHEREUM. then it is.</span>
+    <span>100% uptime since the dawn of man</span>
+    <span>your keys. your BUTTHEREUM.</span>
+    <span>no credit score. no problem.</span>
+    <span>open source. open cheeks.</span>
+    <span>imagine the smell.</span>
+    <span>no middleman. just you and your butt.</span>
+    <span>cryptographically yours</span>
+    <span>BREAKING: local man still hasn't sold</span>
+    <span>diamond hands. iron cheeks.</span>
+    <span>we're all gonna make it. probably.</span>
+    <span>bear market? never met her.</span>
+    <span>bull season. loading.</span>
+    <span>riding the wave. no wipeouts so far.</span>
+    <span>this is fine. (it's fine.)</span>
+    <span>someone bought the top again. not you though.</span>
+    <span>paper hands have left the building</span>
+    <span>good morning. go get some BUTTHEREUM.</span>
+    <span>BREAKING: defi somehow more fun than your savings account</span>
+    <span>wen moon? soon. we mean it this time.</span>
+    <span>wen lambo? retarded question, next.</span>
+    <span>ser, this is a blockchain. act accordingly.</span>
+    <span>if you're not holding you're ngmi. harsh butt fair.</span>
+    <span>not your keys, not your butthereum. write that down.</span>
+    <span>banks fear what they don't understand. always have.</span>
+    <span>good night. your BUTTHEREUM is safu.</span>
+    <span>BUTT/BTC ratio: immaculate. don't look it up.</span>
+    <span>technicals looking cheeky</span>
+    <span>BREAKING: banks still closed on weekends. we are not.</span>
+    <span>analysts predict: more butts</span>
+    <span>JUST IN: guy calls crypto "made up money" - BUTT says thanks</span>
+    <span>community is everything. ours especially.</span>
+    <span>probably nothing.</span>
+    <span>galaxy brain move: buy BUTTHEREUM, tell no one</span>
+    <span>alpha: BUTTHEREUM is the alpha</span>
+    <span>reminder: touch grass. then come back.</span>
+    <span>do your own research. we did ours. it cheeks out.</span>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>The one coin <br>holders can <em>sit on.</em></h1>
+  <p>We're standing on buttness. Butthereum TX fees cost a small fortune & our founder gets boners during crypto conferences.</p>
+  <div class="hero-btns">
+    <div class="btn-wrap"><a href="#" class="btn-gold">get some BUTTHEREUM 🍑</a></div>
+    <div class="btn-wrap"><a class="btn-ghost" id="explainBtn" style="cursor:pointer;">wait, explain this</a></div>
+  </div>
+  <div class="social-links">
+    <a href="https://x.com/butthereum" class="social-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X / Twitter
+    </a>
+    <div class="social-sep"></div>
+    <a href="https://t.me/butthereum" class="social-link">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-1.97 9.289c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.932z"/></svg>
+      Telegram
+    </a>
+    <div class="social-sep"></div>
+    <button class="social-link copy-link" id="copyBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span class="copy-label">0xBUTT...6969</span>
+    </button>
+  </div>
+</div>
+
+<div class="bento-wrap">
+  <div class="grid">
+
+    <!-- PRICE — gold, centered, sparkline bg -->
+    <div class="card s3 card-gold" style="display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;">
+      <div class="card-spotlight"></div>
+      <span class="tag" style="text-align:center;align-self:stretch;">BUTT / USD</span>
+      <div class="price-val"><span class="inf">$<span class="inf-sym">∞</span></span></div>
+      <span class="badge" id="liveBadge" style="display:inline-block;margin-top:.4rem;"><span style="font-size:2.4em;line-height:0;vertical-align:middle;">∞</span>% up from zero</span>
+      <svg class="sparkline" id="sparkline" viewBox="0 0 120 36" preserveAspectRatio="none" style="width:100%;height:36px;margin-top:.8rem;opacity:.7;">
+        <polyline id="sparklineLine" fill="none" stroke="url(#sparkGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" points=""/>
+        <defs>
+          <linearGradient id="sparkGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#ceb474"/>
+            <stop offset="100%" stop-color="#e8d094"/>
+          </linearGradient>
+          <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#e8d094" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="#e8d094" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <polygon id="sparklineFill" fill="url(#sparkFill)" points=""/>
+      </svg>
+      <div class="card-body" style="margin-top:.3rem;font-size:.75rem;">not financial advice lol</div>
+    </div>
+
+    <!-- BUTT VS EVERYTHING -->
+    <div class="card s5">
+      <div class="card-spotlight"></div>
+      <span class="tag">BUTT vs. everything</span>
+      <div class="versus-list" id="versusList">
+        <div class="vs-row"><span class="vs-name">🍑 Butthereum</span><div class="vs-bar-wrap"><div class="vs-bar vs-bar-butt" style="width:0%" data-w="94"></div></div><span class="vs-score" data-score="94">0</span></div>
+        <div class="vs-row"><span class="vs-name">🏦 Your bank</span><div class="vs-bar-wrap"><div class="vs-bar vs-bar-bad" style="width:0%" data-w="12"></div></div><span class="vs-score" data-score="12">0</span></div>
+        <div class="vs-row"><span class="vs-name">💳 Visa</span><div class="vs-bar-wrap"><div class="vs-bar vs-bar-bad" style="width:0%" data-w="28"></div></div><span class="vs-score" data-score="28">0</span></div>
+        <div class="vs-row"><span class="vs-name">🐌 Ethereum</span><div class="vs-bar-wrap"><div class="vs-bar vs-bar-bad" style="width:0%" data-w="19"></div></div><span class="vs-score" data-score="19">0</span></div>
+        <div class="vs-row"><span class="vs-name">😤 Your ex</span><div class="vs-bar-wrap"><div class="vs-bar vs-bar-bad" style="width:0%" data-w="4"></div></div><span class="vs-score" data-score="4">0</span></div>
+      </div>
+      <div class="card-body" style="margin-top:.6rem;font-size:.72rem;">popularity scores based on i made it up.</div>
+    </div>
+
+    <!-- HOLDERS — gold, tall, centered -->
+    <div class="card s4 r2 card-gold" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+      <div class="card-spotlight"></div>
+      <span class="tag">butt analysis</span>
+      <div class="big-num" data-countup="8.3" data-suffix="B" style="margin-top:.3rem;">8.3B</div>
+      <div class="card-body" style="margin-top:.6rem;max-width:140px;">humans with a butt right now. probably.</div>
+      <div class="holders-compare">that's 16.6B butt cheeks.</div>
+    </div>
+
+    <!-- UPTIME — ring + centered -->
+    <div class="card s5" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;">
+      <div class="card-spotlight"></div>
+      <span class="tag">Uptime since the dawn of man.</span>
+      <div class="uptime-ring" style="margin-top:.6rem;">
+        <svg viewBox="0 0 80 80" style="overflow:visible;">
+          <circle cx="40" cy="40" r="34" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="5"/>
+          <circle cx="40" cy="40" r="34" fill="none" stroke="url(#ringGrad)" stroke-width="5"
+            stroke-linecap="round" stroke-dasharray="213.6" stroke-dashoffset="213.6"
+            id="uptimeRing" transform="rotate(-90 40 40)"/>
+          <defs>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#e8d094"/>
+              <stop offset="100%" stop-color="#ceb474"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="big-num" data-countup="100" data-suffix="%" style="font-size:1.5rem;position:relative;z-index:1;letter-spacing:-.04em;">100%</div>
+      </div>
+      <div class="card-body" style="margin-top:.7rem;">unlike your bank on weekends.</div>
+    </div>
+
+    <!-- HEARTBEAT — bars as hero -->
+    <div class="card s3" style="display:flex;flex-direction:column;gap:.6rem;">
+      <div class="card-spotlight"></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <span class="tag" style="margin-bottom:0;">live buttbeat</span>
+        <div class="live-badge"><span class="live-dot"></span>LIVE</div>
+      </div>
+      <div class="bars" id="heartbeat" style="height:64px;flex:1;margin-top:.2rem;">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div>
+      </div>
+      <div class="card-title" style="font-size:.9rem;margin:0;">butt clenches/second.</div>
+    </div>
+
+    <!-- BIG QUOTE + CTA — connected gold bleed -->
+    <div class="card s8 card-quote" style="display:flex;flex-direction:column;justify-content:flex-end;gap:.8rem;min-height:200px;">
+      <div class="card-spotlight"></div>
+      <span class="tag">BUTT</span>
+      <div class="big-quote" style="font-size:clamp(1.6rem,2.8vw,2.2rem);">Nobody owns the butt.<br><em>You do.</em></div>
+      <div class="card-body" style="max-width:460px;">No CEO. No board. No shady guys in suits. Your BUTT is cryptographically yours, nobody can freeze it, sit on it, or lose it without your say-so.</div>
+    </div>
+
+    <div class="card s4 card-cta" style="display:flex;flex-direction:column;justify-content:space-between;min-height:200px;">
+      <div class="card-spotlight"></div>
+      <div>
+        <span class="tag">Ready?</span>
+        <div class="card-title" style="font-size:1.2rem;margin-top:.3rem;line-height:1.2;">Get BUTTHEREUM in 1 minute.</div>
+        <div class="card-body" style="margin-top:.5rem;">No white paper. No waiting in lines. Only butt.</div>
+      </div>
+      <div class="btn-wrap" style="margin-top:1.2rem;"><a href="#" class="btn-gold" style="white-space:nowrap;justify-content:center;">Let's go 🍑</a></div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<div class="footer-wrap">
+  <hr class="footer-rule">
+<footer>
+  <div class="footer-logo">🍑 Butthereum.</div>
+  <div class="footer-tagline">Buttchain coming 2027, probably, not.</div>
+  <small>not financial advice. not any kind of advice actually. we're a coin named after a butt that was named after a slow ass blockchain. please do not make life decisions based on this website. if you can read this, congratulations, your eyesight is better than our lawyer said it needed to be. © 2026 butthereum. all cheeks reserved.</small>
+</footer>
+</div>
+
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  window.addEventListener('DOMContentLoaded', function() {
+
+    /* ── NO RIGHT CLICK / NO DRAG ── */
+    document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+    document.querySelectorAll('img, a').forEach(function(el) {
+      el.setAttribute('draggable', 'false');
+    });
+
+    /* ── SCROLL PROGRESS BAR ── */
+    var scrollBar = document.getElementById('scrollBar');
+    window.addEventListener('scroll', function() {
+      var doc = document.documentElement;
+      var scrolled = doc.scrollTop;
+      var total = doc.scrollHeight - doc.clientHeight;
+      scrollBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+    }, { passive: true });
+
+    /* ── CARD STAGGER ON SCROLL ── */
+    var cards = document.querySelectorAll('.card');
+    var cardObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var card = entry.target;
+          var idx = Array.from(cards).indexOf(card);
+          setTimeout(function() { card.classList.add('card-visible'); }, idx * 65);
+          cardObs.unobserve(card);
+        }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach(function(c) { cardObs.observe(c); });
+
+    /* ── BUTT RAIN ── */
+    var buttBuffer = '';
+    document.addEventListener('keydown', function(e) {
+      buttBuffer += e.key.toUpperCase();
+      if (buttBuffer.length > 4) buttBuffer = buttBuffer.slice(-4);
+      if (buttBuffer === 'BUTT') {
+        buttBuffer = '';
+        for (var r = 0; r < 40; r++) {
+          (function(i) {
+            setTimeout(function() {
+              var drop = document.createElement('div');
+              drop.className = 'butt-drop';
+              drop.textContent = '🍑';
+              drop.style.left = (Math.random() * 100) + 'vw';
+              drop.style.top = '-60px';
+              drop.style.fontSize = (1.2 + Math.random() * 2) + 'rem';
+              var dur = 1.8 + Math.random() * 2;
+              drop.style.animationDuration = dur + 's';
+              document.body.appendChild(drop);
+              setTimeout(function() { drop.remove(); }, dur * 1000 + 100);
+            }, i * 60);
+          })(r);
+        }
+      }
+    });
+
+    /* ── BACKGROUND RIPPLE ── */
+    document.addEventListener('click', function(e) {
+      if (e.target.closest('.card, .btn-gold, .btn-ghost, .social-link, #copyBtn, #explainBtn, a, button')) return;
+      var ring = document.createElement('div');
+      ring.className = 'ripple-ring';
+      ring.style.left = e.clientX + 'px';
+      ring.style.top  = (e.clientY + window.scrollY) + 'px';
+      ring.style.position = 'absolute';
+      document.body.appendChild(ring);
+      setTimeout(function() { ring.remove(); }, 750);
+    });
+
+    /* ── TICKER ── */
+    var track = document.getElementById('tickerTrack');
+    if (track) {
+      // shuffle original spans
+      var spans = Array.from(track.querySelectorAll('span'));
+      for (var s = spans.length - 1; s > 0; s--) {
+        var j = Math.floor(Math.random() * (s + 1));
+        track.appendChild(spans[j]);
+        spans.splice(j, 1);
+      }
+      // clone until wide enough
+      while (track.scrollWidth < window.innerWidth * 2.5) {
+        var cur = track.querySelectorAll('span');
+        for (var i = 0; i < cur.length; i++) {
+          track.appendChild(cur[i].cloneNode(true));
+        }
+      }
+      var tickOffset = 0;
+      var halfWidth = track.scrollWidth / 2;
+      function runTicker() {
+        tickOffset += 0.6;
+        if (tickOffset >= halfWidth) tickOffset -= halfWidth;
+        track.style.transform = 'translateX(-' + tickOffset + 'px)';
+        requestAnimationFrame(runTicker);
+      }
+      requestAnimationFrame(runTicker);
+    }
+
+    /* ── COUNT UP ── */
+    var counters = document.querySelectorAll('[data-countup]');
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        var target = parseFloat(el.getAttribute('data-countup'));
+        var suffix = el.getAttribute('data-suffix') || '';
+        var duration = 1400;
+        var startTs = null;
+        var isInt = target % 1 === 0;
+        function stepCount(ts) {
+          if (!startTs) startTs = ts;
+          var progress = Math.min((ts - startTs) / duration, 1);
+          var ease = 1 - Math.pow(1 - progress, 3);
+          var val = target * ease;
+          el.textContent = (isInt ? Math.floor(val) : val.toFixed(1)) + suffix;
+          if (progress < 1) requestAnimationFrame(stepCount);
+          else el.textContent = target + suffix;
+        }
+        requestAnimationFrame(stepCount);
+        countObserver.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function(c) { countObserver.observe(c); });
+
+    /* ── VERSUS BARS ── */
+    var versusList = document.getElementById('versusList');
+    if (versusList) {
+      var vsObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          var vsBars = versusList.querySelectorAll('.vs-bar');
+          var vsScores = versusList.querySelectorAll('.vs-score');
+          setTimeout(function() {
+            vsBars.forEach(function(bar) {
+              bar.style.width = bar.getAttribute('data-w') + '%';
+            });
+          }, 150);
+          var duration = 1000;
+          var startTs = null;
+          function stepScores(ts) {
+            if (!startTs) startTs = ts;
+            var progress = Math.min((ts - startTs) / duration, 1);
+            var ease = 1 - Math.pow(1 - progress, 3);
+            vsScores.forEach(function(el) {
+              el.textContent = Math.floor(parseInt(el.getAttribute('data-score')) * ease);
+            });
+            if (progress < 1) requestAnimationFrame(stepScores);
+            else vsScores.forEach(function(el) { el.textContent = el.getAttribute('data-score'); });
+          }
+          setTimeout(function() { requestAnimationFrame(stepScores); }, 150);
+          vsObs.unobserve(versusList);
+        }
+      }, { threshold: 0.4 });
+      vsObs.observe(versusList);
+    }
+
+    /* ── FLOATING FACTS ── */
+    var facts = [
+      '"Butt" appears 847 times in the Bitcoin whitepaper. (it doesn\'t, but it should)',
+      'the average crypto holder checks their portfolio 94 times a day. we\'ve counted.',
+      'Satoshi Nakamoto\'s real name is believed to be Gerald.',
+      'a group of butts is technically called a "clench". look it up.',
+      'if you put $1 into BUTTHEREUM in 2015 you\'d still have $1. we respect honesty.',
+      '8.3 billion holders can\'t all be wrong. right? right.',
+      'BUTTHEREUM has never been hacked.',
+      'a BUTTHEREUM transaction settles faster than your microwave reheats leftovers.',
+      'ducks also have no bank accounts. they figured it out.',
+      '"buy the dip" will give people ptsd in 20 years.',
+      'the blockchain was basically invented so butts could own things. that\'s canon.',
+      'Vitalik Buterin definitely has a butt. make of that what you will.',
+      'decentralized means nobody\'s in charge. just like your ex\'s situationship.',
+      '1 BUTTHEREUM = 1 BUTTHEREUM. has always been true. will always be true.',
+      'the moon is 384,400 km away. BUTTHEREUM is right behind you.',
+      'gluteus maximus is Latin for "pretty great honestly". we checked.',
+      '65% of all crypto trades happen while the trader is sitting down. think about it. on their butt.',
+      'Bitcoin pizza day is a thing. every day is butt day.',
+      'the average person sits on their butt for 9.5 hours a day. you\'re doing it right now.',
+      'your bank\'s terms of service is 400 pages. ours is one sentence.',
+      'the internet runs on vibes and electricity. so does your butt.',
+      'Sir Mix-a-Lot was an early BUTTHEREUM advisor. this is unverified but feels right.',
+      'gas fees so low your gran could send money without asking what gas fees are.',
+      'every block on the chain is basically just a butt in a very long lineup.',
+      'scientifically speaking, the butt is one of the most aerodynamic shapes in nature.',
+      'number go up. cheeks go up. it\'s all connected.',
+      'your keys, your BUTTHEREUM. lose the keys, you lost the BUTTHEREUM. don\'t lose the keys.',
+      'a "whale" in crypto is just someone with a very large butt.',
+      'your credit score is a number a faceless company invented. BUTTHEREUM is also a number. better one though.',
+      'the moon has no banks. probably not a coincidence.',
+      'proof of work? more like proof of twerk.',
+      'smart contracts: all the lawyers, none of the lawyers.',
+      'diamond hands means holding. butt cheeks also hold things. the metaphor writes itself.',
+      'the first butt appeared in the Paleolithic era. historians won\'t confirm this but they can\'t deny it either.',
+      'a "block" in blockchain is just a digital butt on a shelf.',
+      'nobody knows who Satoshi is. nobody knows whose butt is on our logo. some things stay mysterious.',
+      'decentralization: when no single butt is running the show.',
+      'bear market? more like bare market. as in naked, so you can see the butt.',
+      'BUTTHEREUM is deflationary. unlike most things you sit on.',
+      'mining crypto uses electricity. mining for compliments uses eye contact.',
+      '"rekt" was first used by someone who sold their BUTTHEREUM too early. true story. (not true.)',
+      'peer-to-peer just means butt to butt. we said what we said.',
+      'HODL was a typo that became a religion. BUTTHEREUM was a vision from day one.',
+      'every transaction gets verified by thousands of computers worldwide. very thorough.',
+      'running a node means your laptop is doing more work than you are.',
+      'NFTs are just jpegs. BUTTHEREUM is a jpg and is useless as well.',
+      'crypto volatility is basically sitting on a whoopee cushion. thrilling. unpredictable.',
+      'the butt is mathematically optimal. we had someone check.',
+      '"WAGMI" means we\'re all gonna make it. BUTTHEREUM is in full agreement.',
+      'if you\'re reading this you\'re already early.',
+    ];
+    var cursorX = 0, cursorY = 0;
+    document.addEventListener('mousemove', function(e) { cursorX = e.clientX; cursorY = e.clientY; });
+
+    var explainBtn = document.getElementById('explainBtn');
+    if (explainBtn) {
+      var factCooldown = false;
+      var usedFacts = [];
+      explainBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (factCooldown) return;
+        factCooldown = true;
+        setTimeout(function() { factCooldown = false; }, 800);
+        if (usedFacts.length === facts.length) usedFacts = [];
+        var available = facts.filter(function(_, i) { return usedFacts.indexOf(i) === -1; });
+        var pick = Math.floor(Math.random() * available.length);
+        usedFacts.push(facts.indexOf(available[pick]));
+        var fact = document.createElement('div');
+        fact.className = 'float-fact';
+        fact.textContent = available[pick];
+        fact.style.position = 'absolute';
+        var jitter = (Math.random() - 0.5) * 60;
+        fact.style.left = (e.clientX - 100 + jitter) + 'px';
+        fact.style.top  = (e.clientY + window.scrollY - 20) + 'px';
+        document.body.appendChild(fact);
+        setTimeout(function() { fact.remove(); }, 3300);
+      });
+    }
+
+    /* ── HEARTBEAT BARS ── */
+    var heartbeat = document.getElementById('heartbeat');
+    if (heartbeat) {
+      var bars = heartbeat.querySelectorAll('.bar');
+      var nbars = bars.length;
+      // generate a new random ECG-like frame
+      function randHeight() {
+        var r = Math.random();
+        if (r < 0.55) return 10 + Math.random() * 18;       // mostly flat-ish noise
+        if (r < 0.70) return 35 + Math.random() * 25;       // mid bump
+        if (r < 0.85) return 75 + Math.random() * 22;       // spike
+        return 5 + Math.random() * 8;                        // dip
+      }
+      var heights = [];
+      for (var b = 0; b < nbars; b++) heights.push(randHeight());
+
+      function pulseBars() {
+        // shift left, push new random value on right
+        heights.shift();
+        heights.push(randHeight());
+        bars.forEach(function(bar, i) {
+          var h = heights[i];
+          bar.style.height = h + '%';
+          bar.style.opacity = h > 60 ? '1' : h > 30 ? '0.6' : '0.3';
+          bar.style.background = h > 70
+            ? 'rgba(206,180,116,.95)'
+            : h > 35
+              ? 'rgba(206,180,116,.45)'
+              : 'rgba(255,255,255,.2)';
+        });
+      }
+      pulseBars();
+      setInterval(pulseBars, 120);
+    }
+
+    /* ── SPARKLINE DRAW ── */
+    var sparkLine = document.getElementById('sparklineLine');
+    var sparkFill = document.getElementById('sparklineFill');
+    if (sparkLine) {
+      var pts = [42,45,41,44,48,43,46,50,47,52,49,55,51,58,56,62,59,65,63,68,64,69];
+      var svgW = 120, svgH = 36, minV = 38, maxV = 72;
+      var coords = pts.map(function(v, i) {
+        return [(i / (pts.length - 1)) * svgW, svgH - ((v - minV) / (maxV - minV)) * svgH];
+      });
+      var lineStr = coords.map(function(c) { return c[0].toFixed(1) + ',' + c[1].toFixed(1); }).join(' ');
+      sparkLine.setAttribute('points', lineStr);
+      if (sparkFill) sparkFill.setAttribute('points', '0,' + svgH + ' ' + lineStr + ' ' + svgW + ',' + svgH);
+
+      var sparkObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          var lineLen = sparkLine.getTotalLength ? sparkLine.getTotalLength() : 300;
+          sparkLine.style.strokeDasharray = lineLen;
+          sparkLine.style.strokeDashoffset = lineLen;
+          sparkLine.style.transition = 'stroke-dashoffset 1.4s cubic-bezier(.4,0,.2,1) .2s';
+          sparkLine.style.strokeDashoffset = 0;
+          if (sparkFill) {
+            var fillLen = lineLen + svgW + svgH * 2;
+            sparkFill.style.strokeDasharray = fillLen;
+            sparkFill.style.strokeDashoffset = fillLen;
+            sparkFill.style.transition = 'stroke-dashoffset 1.6s cubic-bezier(.4,0,.2,1) .3s';
+            sparkFill.style.strokeDashoffset = 0;
+          }
+          sparkObs.unobserve(sparkLine);
+        }
+      }, { threshold: 0.4 });
+      sparkObs.observe(sparkLine);
+    }
+
+    /* ── UPTIME RING ── */
+    var ring = document.getElementById('uptimeRing');
+    if (ring) {
+      var ringObs = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          var rStart = null; var total = 213.6;
+          function animRing(ts) {
+            if (!rStart) rStart = ts;
+            var p = Math.min((ts - rStart) / 1400, 1);
+            ring.style.strokeDashoffset = total * (1 - (1 - Math.pow(1 - p, 3)));
+            if (p < 1) requestAnimationFrame(animRing);
+            else ring.style.strokeDashoffset = 0;
+          }
+          requestAnimationFrame(animRing);
+          ringObs.unobserve(ring);
+        }
+      }, { threshold: 0.4 });
+      ringObs.observe(ring);
+    }
+
+    /* ── COPY BUTTON ── */
+    var copyBtn = document.getElementById('copyBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText('NO ADDRESS');
+        var label = copyBtn.querySelector('.copy-label');
+        label.style.opacity = '0';
+        setTimeout(function() { label.textContent = '✓ copied'; label.style.opacity = '1'; }, 200);
+        setTimeout(function() {
+          label.style.opacity = '0';
+          setTimeout(function() { label.textContent = '0xBUTT...6969'; label.style.opacity = '1'; }, 200);
+        }, 1800);
+      });
+    }
+
+    /* ── CARD SPOTLIGHT ── */
+    var cards = document.querySelectorAll('.card');
+    cards.forEach(function(card) {
+      var spotlight = card.querySelector('.card-spotlight');
+
+      card.addEventListener('mousemove', function(e) {
+        var r = card.getBoundingClientRect();
+        var x = e.clientX - r.left;
+        var y = e.clientY - r.top;
+
+        /* spotlight follows cursor within card */
+        if (spotlight) {
+          spotlight.style.background = 'radial-gradient(circle 200px at ' + x + 'px ' + y + 'px, rgba(255,255,255,.09) 0%, transparent 70%)';
+        }
+
+        /* tilt */
+        var nx = (x / r.width  - 0.5);
+        var ny = (y / r.height - 0.5);
+        card.style.transform = 'translateY(-3px) scale(1.01) rotateX(' + (-ny * 8) + 'deg) rotateY(' + (nx * 8) + 'deg)';
+      });
+
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+        if (spotlight) spotlight.style.background = '';
+      });
+    });
+
+  });
+</script>
+</body>
